@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends React.Component {
-    render = () =>
-        <div style={{color: "#ff0000"}}>Hello React!</div>;
-}
+import {Provider} from 'react-redux';
+import {createFinalStore} from './redux/final-store';
+
+import Sample from './components/organisms/Sample'
 
 ReactDOM.render(
-    <App/>,
+    <Provider store={createFinalStore()}>
+        <Sample/>
+    </Provider>,
     document.getElementById('app')
 );
